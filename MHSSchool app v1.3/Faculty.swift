@@ -77,10 +77,12 @@ class Faculty: UITableViewController {
         //        }
         
         //New Method
+       
         var i = 0;
         while (i < lines.count - 2) {
             let name_1:String = lines[i]
             let email_1:String = lines[i + 1]
+            
           
             
             recipes.append(Recipe(name: name_1, thumbnails: "profile.png", prepTime: email_1))

@@ -1,6 +1,6 @@
 import UIKit
 
-class Bell: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource{
+class Bell: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
     
    
   
@@ -10,7 +10,7 @@ class Bell: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource{
     @IBOutlet weak var label: UILabel!
    
     @IBOutlet weak var imageView: UIImageView!
-    let sports = ["30 Minute Advisory", "2 Hour Delay", "2 Hour Early Dismissal", "3 Hour Delay"]
+    let sports = ["Regular Day","30 Minute Advisory", "2 Hour Delay", "2 Hour Early Dismissal", "3 Hour Delay"]
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -28,15 +28,17 @@ class Bell: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource{
         label.text = sports[row]
         switch row {
         case 0:
-            imageView.image =  UIImage(named: "30 min advisory")
+            imageView.image =  UIImage(named: "regular school day")
         case 1:
-            imageView.image =  UIImage(named: "2 hr delay")
+            imageView.image =  UIImage(named: "30 min advisory")
         case 2:
-            imageView.image =  UIImage(named: "2 hr early dismissal")
+            imageView.image =  UIImage(named: "2 hr delay")
         case 3:
+            imageView.image =  UIImage(named: "2 hr early dismissal")
+        case 4:
             imageView.image =  UIImage(named: "3 hr delay")
         default:
-            imageView.image = UIImage(named: "30 min advisory")
+            imageView.image = UIImage(named: "regular school day")
         }
         
         

@@ -182,6 +182,7 @@ open class ASHorizontalScrollView: UIScrollView, UIScrollViewDelegate {
     public var marginSettings_1024:MarginSettings?
     /// for ipad pro 12.9 in landscape
     public var marginSettings_1366:MarginSettings?
+  
     
     /// store the current items' margin
     open var itemsMargin:CGFloat = 10.0

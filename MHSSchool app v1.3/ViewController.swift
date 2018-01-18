@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController:  UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let kCellHeight:CGFloat = 100.0
+    let kCellHeight:CGFloat = 110.0
     var sampleTableView:UITableView!
     
     
@@ -24,7 +24,9 @@ class ViewController:  UIViewController, UITableViewDelegate, UITableViewDataSou
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.sampleTableView = UITableView(frame:CGRect(x: 0,y: 160,width: self.view.frame.size.width, height: 140), style:.grouped)
+   
+        
+        self.sampleTableView = UITableView(frame:CGRect(x: 0,y: 160,width: self.view.frame.size.width, height: 160), style:.grouped)
         self.sampleTableView.backgroundColor=UIColor.init(colorLiteralRed: 0.23, green: 0.23, blue: 0.24, alpha: 1.0)
         sampleTableView.dataSource = self
         sampleTableView.delegate = self
@@ -76,6 +78,9 @@ class ViewController:  UIViewController, UITableViewDelegate, UITableViewDataSou
             cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: indentifier)
             cell?.selectionStyle = .none
             let horizontalScrollView:ASHorizontalScrollView = ASHorizontalScrollView(frame:CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: kCellHeight))
+            
+            
+            
             //for iPhone 5s and lower versions in portrait
             horizontalScrollView.marginSettings_320 = MarginSettings(leftMargin: 10, miniMarginBetweenItems: 5, miniAppearWidthOfLastItem: 20)
             //for iPhone 4s and lower versions in landscape
@@ -86,8 +91,8 @@ class ViewController:  UIViewController, UITableViewDelegate, UITableViewDataSou
             horizontalScrollView.marginSettings_736 = MarginSettings(leftMargin: 10, miniMarginBetweenItems: 10, miniAppearWidthOfLastItem: 30)
             //for all other screen sizes that doesn't set here, it would use defaultMarginSettings instead
             horizontalScrollView.defaultMarginSettings = MarginSettings(leftMargin: 10, miniMarginBetweenItems: 10, miniAppearWidthOfLastItem: 20)
-     if indexPath.row == 0 {
-                horizontalScrollView.uniformItemSize = CGSize(width: 80, height: 80)
+            if indexPath.row == 0 {
+                horizontalScrollView.uniformItemSize = CGSize(width: 100, height: 100)
                 //this must be called after changing any size or margin property of this class to get acurrate margin
                 horizontalScrollView.setItemsMarginOnce()
                 //for _ in 1...6{
@@ -220,45 +225,8 @@ class ViewController:  UIViewController, UITableViewDelegate, UITableViewDataSou
         performSegue(withIdentifier: "segue10", sender: self)
     }
 
-    
-    /*@IBAction func game2action(_ sender: Any) {
-        performSegue(withIdentifier: "segue8", sender: self)
-        
-    }
-    
-    @IBAction func game3action(_ sender: Any) {
-        performSegue(withIdentifier: "segue9", sender: self)
-        
-    }
-    
-    @IBAction func game4action(_ sender: Any) {
-        performSegue(withIdentifier: "segue10", sender: self)
-        
-    }*/
+
     
 }
 
 
-
-
-
-
-   /* @IBAction func engradeAction(_ sender: Any) {
-         performSegue(withIdentifier: "segue1", sender: self)
-    }
-
-  
-    @IBAction func sportsAction(_ sender: Any) {
-          performSegue(withIdentifier: "segue2", sender: self)
-    }
-    
-    @IBAction func bellAction(_ sender: Any) {
-        performSegue(withIdentifier: "segue3", sender: self)
-    }
-    
-    @IBAction func facultyAction(_ sender: Any) {
-        performSegue(withIdentifier: "segue4", sender: self)
-    }
-
-}
-*/
